@@ -41,7 +41,7 @@ public class Job {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Job job = (Job) o;
-        return getId() == job.getId();
+        return id == job.id;
     }
 
     @Override
@@ -94,5 +94,42 @@ public class Job {
 
     public int getId() {
         return id;
+    }
+    @Override
+    public String toString() {
+        String idOutput = Integer.toString(getId());
+        String nameOutput = this.name;
+        String employerOutput = String.valueOf(getEmployer());
+        String locationOutput = String.valueOf(getLocation());
+        String positionTypeOutput = String.valueOf(getPositionType());
+        String coreCompetencyOutput = String.valueOf(getCoreCompetency());
+
+        if(nameOutput == "") {
+            nameOutput = "Data not available";
+        }
+
+        if(employerOutput == ""){
+            employerOutput = "Data not available";
+        }
+
+        if(locationOutput == ""){
+            locationOutput = "Data not available";
+        }
+
+        if(positionTypeOutput == ""){
+            positionTypeOutput = "Data not available";
+        }
+
+        if(coreCompetencyOutput == ""){
+            coreCompetencyOutput = "Data not available";
+        }
+
+
+        return "\nID: " + idOutput +
+                "\nName: " + nameOutput +
+                "\nEmployer: " + employerOutput +
+                "\nLocation: " + locationOutput +
+                "\nPosition Type: " + positionTypeOutput +
+                "\nCore Competency: " + coreCompetencyOutput + "\n";
     }
 }
